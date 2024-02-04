@@ -1,0 +1,2001 @@
+{
+	"info": {
+		"_postman_id": "4c6b814e-f19f-40c3-98cc-f568cb51e6b2",
+		"name": "GOREST API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32464770"
+	},
+	"item": [
+		{
+			"name": "usuarios",
+			"item": [
+				{
+					"name": "criar usuarios",
+					"item": [
+						{
+							"name": "criar usuario",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body matches string\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"created\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Tenali Ramakarishnaaa\",\r\n    \"gender\": \"male\",\r\n    \"email\": \"tenali.ramakrishnaaaa@1567890ce.com\",\r\n    \"status\": \"active\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_base}}/users",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"users"
+									]
+								},
+								"description": "Teste para criação de usuários no recurso de usuários.\n\nResultados esperados:\n\n\\*response code: 201\n\n\\*string 'id' no corpo do response\n\n\\*tempode resposta <2000ms"
+							},
+							"response": [
+								{
+									"name": "Test case - criar usuario",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Tenali Ramakarishnaaa\",\r\n    \"gender\": \"male\",\r\n    \"email\": \"tenali.ramakrishnaaaa@15678ce.com\",\r\n    \"status\": \"active\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "/users",
+											"path": [
+												"users"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Fri, 02 Feb 2024 17:38:21 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "123"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"e9026b2c70270ed743f1cf9b00c9ea3e\""
+										},
+										{
+											"key": "location",
+											"value": "https://gorest.co.in/public/v2/users/6136239"
+										},
+										{
+											"key": "referrer-policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-download-options",
+											"value": "noopen"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "x-permitted-cross-domain-policies",
+											"value": "none"
+										},
+										{
+											"key": "x-ratelimit-limit",
+											"value": "90"
+										},
+										{
+											"key": "x-ratelimit-remaining",
+											"value": "89"
+										},
+										{
+											"key": "x-ratelimit-reset",
+											"value": "1"
+										},
+										{
+											"key": "x-request-id",
+											"value": "268c2dd7-9094-4b54-b656-a3db98d41d7d"
+										},
+										{
+											"key": "x-runtime",
+											"value": "0.104659"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "0"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=V7JdUstx%2F1jIHpZ%2FFKXLC%2FQS1iiA%2FO2Dz9W6oNozZNQxyBdDQmOw6GDfinNNN9Eyy7%2Fddt7VpM30BPe%2FKRGK4jell8HfrWN0jRmbtMqJe%2FWMUyi0n%2BsyBVvAM3LPEkA%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "84f43511fbce6b18-GRU"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 6136239,\n    \"name\": \"Tenali Ramakarishnaaa\",\n    \"email\": \"tenali.ramakrishnaaaa@15678ce.com\",\n    \"gender\": \"male\",\n    \"status\": \"active\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "excluir usuarios",
+					"item": [
+						{
+							"name": "deletar usuario",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 204\", function () {\r",
+											"    pm.response.to.have.status(204);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body matches string\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"id\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer d29869fbb4fef4fd105599841b16579fad743ca26b77a8e3707c0266afd92da9"
+									}
+								],
+								"url": {
+									"raw": "{{url_base}}/users/{{id_delete}}",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"users",
+										"{{id_delete}}"
+									]
+								},
+								"description": "Teste para exclusão de usuários no recurso de usuários.\n\nResultados esperados:\n\n\\*response code: 201\n\n\\*string 'id' no corpo do response\n\n\\*tempode resposta <2000ms"
+							},
+							"response": [
+								{
+									"name": "Test case - deletar usuario",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer d29869fbb4fef4fd105599841b16579fad743ca26b77a8e3707c0266afd92da9"
+											}
+										],
+										"url": {
+											"raw": "/users/6134835",
+											"path": [
+												"users",
+												"6134835"
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Fri, 02 Feb 2024 17:40:17 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache"
+										},
+										{
+											"key": "referrer-policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-download-options",
+											"value": "noopen"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "x-permitted-cross-domain-policies",
+											"value": "none"
+										},
+										{
+											"key": "x-ratelimit-limit",
+											"value": "90"
+										},
+										{
+											"key": "x-ratelimit-remaining",
+											"value": "89"
+										},
+										{
+											"key": "x-ratelimit-reset",
+											"value": "1"
+										},
+										{
+											"key": "x-request-id",
+											"value": "e7702ac7-10b7-417b-a85d-76d91dda4a1a"
+										},
+										{
+											"key": "x-runtime",
+											"value": "0.120015"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "0"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=zbEMD%2FrZp7J%2FXzTVPeuFL6Vw58DAsYsU8%2F2lk2Ad4NPKEzMmeaWs1ek4qjy7NRcAmT0%2B6%2FHAzWtY%2BwEWRBNZtYBR1Y1xP60xfbb8UJQWOs86DZzut%2BIZgHa7z6NkAXI%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "84f437e35fd56b18-GRU"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": null
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "alterar usuarios",
+					"item": [
+						{
+							"name": "alterar usuario",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body matches string\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"id\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer d29869fbb4fef4fd105599841b16579fad743ca26b77a8e3707c0266afd92da9"
+									}
+								],
+								"url": {
+									"raw": "{{url_base}}/users/{{id_update}}",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"users",
+										"{{id_update}}"
+									]
+								},
+								"description": "Teste para alteração de usuário específico no recurso de usuários.\n\nResultados esperados:\n\n\\*response code: 200\n\n\\*string 'id' no corpo do response\n\n\\*tempode resposta <200ms"
+							},
+							"response": [
+								{
+									"name": "Test case - alterar usuario",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer d29869fbb4fef4fd105599841b16579fad743ca26b77a8e3707c0266afd92da9"
+											}
+										],
+										"url": {
+											"raw": "/users/6129451",
+											"path": [
+												"users",
+												"6129451"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Fri, 02 Feb 2024 17:55:53 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"8438409d31933fe0cb6485084f69eeab\""
+										},
+										{
+											"key": "referrer-policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-download-options",
+											"value": "noopen"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "x-permitted-cross-domain-policies",
+											"value": "none"
+										},
+										{
+											"key": "x-ratelimit-limit",
+											"value": "90"
+										},
+										{
+											"key": "x-ratelimit-remaining",
+											"value": "89"
+										},
+										{
+											"key": "x-ratelimit-reset",
+											"value": "1"
+										},
+										{
+											"key": "x-request-id",
+											"value": "da0c9778-493d-4440-92ad-78c801db8899"
+										},
+										{
+											"key": "x-runtime",
+											"value": "0.073701"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "0"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=nQfVCMCyBgYzZZlR8hNvXlHJj1%2FH10%2F9cn86i%2BLthUE0RIRHLvIr%2FkyoRMmRZFz1FnCTvRe7ggR14brPWGJg9V4CAl75F6eTfOLDnLjCtZ742QQ6FqyHuEf7b3UzSWQ%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "84f44ec3ade579f1-GIG"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 6129451,\n    \"name\": \"Sen. Aatmaja Desai\",\n    \"email\": \"sen_desai_aatmaja@ryan.test\",\n    \"gender\": \"female\",\n    \"status\": \"active\"\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "posts",
+			"item": [
+				{
+					"name": "criar post",
+					"item": [
+						{
+							"name": "criar post",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body matches string\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"id\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer d29869fbb4fef4fd105599841b16579fad743ca26b77a8e3707c0266afd92da9"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 994019,\r\n    \"user_id\": 613429009,\r\n    \"title\": \"Aestivus textilis non recusandae sustineo trans vulgaris.\",\r\n    \"body\": \"Asperiores et voluptatem. Voluptates deleo coadunatio. Theologus talis quo. Dedecor crudelis arcus. Tametsi tenetur coma. Cibus ambulo patruus. Volaticus reiciendis advenio. Viduo spoliatio angelus. Tibi amplus acervus. Esse conforto colloco. Usus adulatio appositus.\"\r\n}"
+								},
+								"url": {
+									"raw": "{{url_base}}/posts",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"posts"
+									]
+								},
+								"description": "Teste para criação de post no recurso de posts.\n\nResultados esperados:\n\n\\*response code: 201\n\n\\*string 'id' no corpo do response\n\n\\*tempode resposta <2000ms"
+							},
+							"response": [
+								{
+									"name": "Test case - criar post",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer d29869fbb4fef4fd105599841b16579fad743ca26b77a8e3707c0266afd92da9"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\": 994019,\r\n    \"user_id\": 613429009,\r\n    \"title\": \"Aestivus textilis non recusandae sustineo trans vulgaris.\",\r\n    \"body\": \"Asperiores et voluptatem. Voluptates deleo coadunatio. Theologus talis quo. Dedecor crudelis arcus. Tametsi tenetur coma. Cibus ambulo patruus. Volaticus reiciendis advenio. Viduo spoliatio angelus. Tibi amplus acervus. Esse conforto colloco. Usus adulatio appositus.\"\r\n}"
+										},
+										"url": {
+											"raw": "/posts",
+											"path": [
+												"posts"
+											]
+										}
+									},
+									"status": "Unprocessable Entity",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Fri, 02 Feb 2024 17:58:37 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "41"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache"
+										},
+										{
+											"key": "referrer-policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-download-options",
+											"value": "noopen"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "x-permitted-cross-domain-policies",
+											"value": "none"
+										},
+										{
+											"key": "x-ratelimit-limit",
+											"value": "90"
+										},
+										{
+											"key": "x-ratelimit-remaining",
+											"value": "89"
+										},
+										{
+											"key": "x-ratelimit-reset",
+											"value": "1"
+										},
+										{
+											"key": "x-request-id",
+											"value": "e4bfbf3d-7bcd-4dc1-81de-1218ced37318"
+										},
+										{
+											"key": "x-runtime",
+											"value": "0.099876"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "0"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=UxJbmXiBbEabXPlN9lGmMZq%2FIHipiEwvpKFyVjclL8C3Kj%2BbdZFt83vPd9IUXFxm27xSB%2BU2ABPQ6SpMKDRqvPZ2EWNYbW8GKCv61hx2kd01PyXnbQxNDPSWiYlN5as%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "84f452c04eb179f1-GIG"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"field\": \"user\",\n        \"message\": \"must exist\"\n    }\n]"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "buscar post",
+					"item": [
+						{
+							"name": "buscar post",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body matches string\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"id\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/posts",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"posts"
+									]
+								},
+								"description": "Teste para busca de post no recurso de posts.\n\nResultados esperados:\n\n\\*response code: 200\n\n\\*string 'id' no corpo do response\n\n\\*tempode resposta <2000ms"
+							},
+							"response": [
+								{
+									"name": "Test case - buscar post",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "/posts",
+											"path": [
+												"posts"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Fri, 02 Feb 2024 19:33:33 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"0ee0b2e6ad07cbc9ae9cfa631e338820\""
+										},
+										{
+											"key": "referrer-policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-download-options",
+											"value": "noopen"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "x-links-current",
+											"value": "https://gorest.co.in/public/v2/posts?page=1"
+										},
+										{
+											"key": "x-links-next",
+											"value": "https://gorest.co.in/public/v2/posts?page=2"
+										},
+										{
+											"key": "x-links-previous",
+											"value": ""
+										},
+										{
+											"key": "x-pagination-limit",
+											"value": "10"
+										},
+										{
+											"key": "x-pagination-page",
+											"value": "1"
+										},
+										{
+											"key": "x-pagination-pages",
+											"value": "293"
+										},
+										{
+											"key": "x-pagination-total",
+											"value": "2927"
+										},
+										{
+											"key": "x-permitted-cross-domain-policies",
+											"value": "none"
+										},
+										{
+											"key": "x-ratelimit-limit",
+											"value": "90"
+										},
+										{
+											"key": "x-ratelimit-remaining",
+											"value": "89"
+										},
+										{
+											"key": "x-ratelimit-reset",
+											"value": "1"
+										},
+										{
+											"key": "x-request-id",
+											"value": "2e9e3c54-1136-4baa-801d-d97cf28da87e"
+										},
+										{
+											"key": "x-runtime",
+											"value": "0.113341"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "0"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=uNt3ms%2F7ZZvCKzEqX7rW29UUgt%2FiTgkjT09yJ3F5zWchmQ2qdx%2F4kJqJtCqCQJp3gs55RCWJtBSNUPyEq3OUmldGdYbUCS95KebWBFm1G0hK%2BGfAPRyAC8BH5OxJ7Xc%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "84f4ddcb2a8c01a8-GRU"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"id\": 99414,\n        \"user_id\": 6134294,\n        \"title\": \"Charisma abduco et tricesimus vereor desparatus.\",\n        \"body\": \"Strues sublime creo. Cicuta theatrum aut. Umbra tempore ciminatio. Temeritas bardus tui. Dedecor vorago acceptus. Adduco defetiscor accusamus. Bonus repellat defero. Quo doloribus conduco. Tum tandem quia. Iusto delego audentia. Eum amet super. Verumtamen calcar unde. Cogo consequatur attero. Error tener appello.\"\n    },\n    {\n        \"id\": 99413,\n        \"user_id\": 6134294,\n        \"title\": \"Dolores recusandae voluptatum accedo ventito arbustum sonitus tenax.\",\n        \"body\": \"Deputo antea quia. Suppono amitto cauda. Stella conatus ultra. Sint nostrum censura. Est est assumenda. Ut cetera cena. Apto decerno accusantium. Nihil pauper creber. Qui fugiat aetas. Tres culpo tabesco. Saepe voluptas xiphias. Magnam suffragium vinculum. Aer testimonium error. Derelinquo urbs torrens.\"\n    },\n    {\n        \"id\": 99211,\n        \"user_id\": 6131459,\n        \"title\": \"Urbanus vorago charisma est deleniti.\",\n        \"body\": \"Angulus tempora auctor. Contigo averto vulgo. Veritas fugit umerus. Esse conforto testimonium. Acquiro alo nihil. Tergeo ut voro. Tego alius aut. Annus est capitulus. Thermae sum vestigium. Alii officia utpote.\"\n    },\n    {\n        \"id\": 99190,\n        \"user_id\": 6129744,\n        \"title\": \"Apud tenuis certo velit abbas virtus avaritia charisma vigilo.\",\n        \"body\": \"Capio adeo adflicto. Vapulus suppono sophismata. Est undique atrocitas. Versus condico cotidie. Certo atavus qui. Audax deleo qui. Spoliatio capitulus bis. Stips tertius correptius. Tui repellat thema. Virga stabilis id. At quia sub. Arguo tabesco administratio. Harum iste artificiose. Quisquam confugo aestus. Vomer cursim claustrum. Aut conscendo verbum. Coma centum decens.\"\n    },\n    {\n        \"id\": 99189,\n        \"user_id\": 6129743,\n        \"title\": \"Antea spectaculum vomer catena voluptate tracto.\",\n        \"body\": \"Sol temporibus commemoro. Desolo tyrannus crepusculum. Cum candidus cetera. Cogo admitto talio. Solvo audio itaque. Sodalitas canonicus debilito. Solium denuo tyrannus. Correptius vilitas despirmatio. Cresco adipiscor quis. Et somnus talis. Pel dolores taceo.\"\n    },\n    {\n        \"id\": 99188,\n        \"user_id\": 6129743,\n        \"title\": \"Fugiat animadverto tenus non attero careo claro terra.\",\n        \"body\": \"Brevis paens aqua. Commodo vesco vigilo. Et corrupti perspiciatis. Crastinus carpo suspendo. Carpo vel cibo. Amissio in aptus. Balbus arbitro fugiat. Distinctio cuppedia tabernus. Crux cibo consuasor. Triumphus amo calco. Stillicidium super voluptate. Consectetur civitas fuga. Amicitia non triginta. Ascit apostolus facere. Enim vix ciminatio.\"\n    },\n    {\n        \"id\": 99186,\n        \"user_id\": 6129741,\n        \"title\": \"Soluta iste comburo desipio numquam bestia.\",\n        \"body\": \"Benigne adsum inflammatio. Una et tandem. Animi sequi viridis. Aufero clementia contra. Abutor impedit vobis. Vicinus arcus aeternus. Culpo tepesco admitto. Adfero deleo allatus. Suppono viduata sequi. Audacia ratione voluptates. Corrumpo admiratio velit.\"\n    },\n    {\n        \"id\": 99185,\n        \"user_id\": 6129739,\n        \"title\": \"Triginta claustrum non acceptus iure amissio.\",\n        \"body\": \"Attollo tredecim absum. Complectus temptatio derideo. Coniuratio uredo vado. Vester tego qui. Thermae conscendo cinis. Contra suppono blanditiis. Comptus tantillus acer. Aut tenax id. Est cognomen aut. Cumque cuppedia utilis. Curvus cohors ut. Vero asper pecco. Thema vel venia. Atrocitas volva crustulum. Contego demonstro aut.\"\n    },\n    {\n        \"id\": 99184,\n        \"user_id\": 6129739,\n        \"title\": \"Consequatur sub colloco deserunt sol vapulus.\",\n        \"body\": \"Iusto valeo theologus. Calco corpus ultra. Deinde fugit inflammatio. Conservo sed fugit. Conqueror consequatur atrocitas. Congregatio comminor viduata. Eos tubineus tero. Usus aranea odit. Antepono doloremque corroboro. Vallum ustilo aurum. Speciosus centum deripio. Audacia accommodo thalassinus. Maiores cupressus compello. Sursum error veritas. Provident decipio comminor. Terra vinum comptus.\"\n    },\n    {\n        \"id\": 99183,\n        \"user_id\": 6129737,\n        \"title\": \"Dedecor confero animus apparatus pariatur et.\",\n        \"body\": \"Ultio qui quo. Teres adversus vulgivagus. Consequatur tener approbo. Coerceo benevolentia crinis. Victus omnis correptius. Amor vir velum. Arx turpis cavus. Totam exercitationem qui. Eos tonsor velit. Condico amet viduata. Porro bis defigo. Vaco clementia strues. Textus comprehendo acidus. Adstringo debitis confero. Celo thesis verus. Vetus adipisci tricesimus. Urbs acer toties. Copiose trado ullus.\"\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "buscar post especifico",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body matches string\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"id\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/posts/{{id_post_busca}}",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"posts",
+										"{{id_post_busca}}"
+									]
+								},
+								"description": "Teste para busca de post especifico no recurso de posts.\n\nResultados esperados:\n\n\\*response code: 200\n\n\\*string 'id' no corpo do response\n\n\\*tempode resposta <2000ms"
+							},
+							"response": [
+								{
+									"name": "Test case - buscar post especifico",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "/posts/99190",
+											"path": [
+												"posts",
+												"99190"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Fri, 02 Feb 2024 19:34:15 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"64e619afc8c2a13bbecf8a276850b6ac\""
+										},
+										{
+											"key": "referrer-policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-download-options",
+											"value": "noopen"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "x-permitted-cross-domain-policies",
+											"value": "none"
+										},
+										{
+											"key": "x-ratelimit-limit",
+											"value": "90"
+										},
+										{
+											"key": "x-ratelimit-remaining",
+											"value": "89"
+										},
+										{
+											"key": "x-ratelimit-reset",
+											"value": "1"
+										},
+										{
+											"key": "x-request-id",
+											"value": "0017184c-0142-4ffe-a712-83cbef80d6b0"
+										},
+										{
+											"key": "x-runtime",
+											"value": "0.076285"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "0"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=ZkjOBjxic0wdrm5olHBthRrGzA16C403g8742UNPdgL4JWIS3UGuD%2FK98SCABUEiGEv9pEyJgfhYr46WYl7H8hh%2FKZ9mBFIumz9SKL3b6Cu5dPryOFZuP%2BwhDLYBwhE%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "84f4ded55c8901a8-GRU"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": 99190,\n    \"user_id\": 6129744,\n    \"title\": \"Apud tenuis certo velit abbas virtus avaritia charisma vigilo.\",\n    \"body\": \"Capio adeo adflicto. Vapulus suppono sophismata. Est undique atrocitas. Versus condico cotidie. Certo atavus qui. Audax deleo qui. Spoliatio capitulus bis. Stips tertius correptius. Tui repellat thema. Virga stabilis id. At quia sub. Arguo tabesco administratio. Harum iste artificiose. Quisquam confugo aestus. Vomer cursim claustrum. Aut conscendo verbum. Coma centum decens.\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "excluir post",
+					"item": [
+						{
+							"name": "excluir post",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 204\", function () {\r",
+											"    pm.response.to.have.status(204);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body matches string\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"id\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/posts((id_post_excluir}}",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"posts((id_post_excluir}}"
+									]
+								},
+								"description": "Teste para exclusão de post no recurso de posts.\n\nResultados esperados:\n\n\\*response code: 204\n\n\\*string 'id' no corpo do response\n\n\\*tempode resposta <2000ms"
+							},
+							"response": [
+								{
+									"name": "Test case - excluir post",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{url_base}}/posts((id_post_excluir}}",
+											"host": [
+												"{{url_base}}"
+											],
+											"path": [
+												"posts((id_post_excluir}}"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "html",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Fri, 02 Feb 2024 19:35:03 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/html; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache"
+										},
+										{
+											"key": "feature-policy",
+											"value": "camera 'none'; gyroscope 'none'; microphone 'none'; usb 'none'; fullscreen 'self'"
+										},
+										{
+											"key": "link",
+											"value": "</assets/application-6286ef85f8dd095e49957bfc5b0cba0b68df3592774b35d0494027d130601970.css>; rel=preload; as=style; nopush"
+										},
+										{
+											"key": "referrer-policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-download-options",
+											"value": "noopen"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "x-permitted-cross-domain-policies",
+											"value": "none"
+										},
+										{
+											"key": "x-request-id",
+											"value": "5624767f-6f16-411c-a5aa-66f84bf1695f"
+										},
+										{
+											"key": "x-runtime",
+											"value": "0.023494"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "0"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=V%2FL%2F7IPbV6Dg0n7R6mX9jnjb2EycZGv3QFO446i2N%2Fk4nP3%2BF5nORRbkGNAz1MKQ16ygsgYRc0Ttt%2BYIMUx9cgBjSQxc%2FNo%2FgEPBgN1X5co4OdSJEfYjT%2Bev8qNBomE%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "84f4e0023ba001a8-GRU"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "<!DOCTYPE html>\n<html>\n    <head>\n        <meta charset=\"utf-8\" />\n        <meta content=\"width=device-width, initial-scale=1, shrink-to-fit=no\" name=\"viewport\" />\n        <link href=\"/favicon.ico\" rel=\"icon\" type=\"image/x-icon\" />\n        <title>Page Not Found | GO REST</title>\n        <link rel=\"stylesheet\" href=\"/assets/application-6286ef85f8dd095e49957bfc5b0cba0b68df3592774b35d0494027d130601970.css\" media=\"all\" data-turbolinks-track=\"reload\" />\n        <script src=\"/packs/js/application-194ed409298f13f197d2.js\" data-turbolinks-track=\"reload\" defer=\"defer\"></script>\n        <script async=\"true\" crossorigin=\"anonymous\" src=\"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4930099895671899\"></script>\n        <script async=\"true\" src=\"https://www.googletagmanager.com/gtag/js?id=G-7KR6VNWHWS\"></script>\n        <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-7KR6VNWHWS');</script>\n    </head>\n    <body>\n        <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark sticky-top\">\n            <div class=\"container\">\n                <a class=\"navbar-brand\" href=\"/\">\n                    <i class=\"fas fa-exchange-alt\"></i> Go REST\n                </a>\n                <button aria-controls=\"AppNavBar\" aria-expanded=\"false\" aria-label=\"Toggle navigation\" class=\"navbar-toggler\" data-bs-target=\"#AppNavBar\" data-bs-toggle=\"collapse\" type=\"button\">\n                    <span class=\"navbar-toggler-icon\"></span>\n                </button>\n                <div class=\"collapse navbar-collapse\" id=\"AppNavBar\">\n                    <ul class=\"navbar-nav ms-auto\">\n                        <li class=\"nav-item\">\n                            <a class=\"nav-link\" href=\"/chandamama-stories\">\n                                <i class=\"fas fa-cloud-moon\"></i> Chandamama Stories\n                            </a>\n                        </li>\n                        <li class=\"nav-item\">\n                            <a class=\"nav-link\" href=\"/qa\">\n                                <i class=\"fas fa-life-ring\"></i> Help\n                            </a>\n                        </li>\n                        <li class=\"nav-item\">\n                            <a class=\"nav-link\" href=\"/rest-console\">\n                                <i class=\"fab fa-linux\"></i> Rest Console\n                            </a>\n                        </li>\n                        <li class=\"nav-item dropdown\">\n                            <a aria-expanded=\"false\" class=\"nav-link dropdown-toggle\" data-bs-toggle=\"dropdown\" href=\"#\" id=\"ToolsDropDown\" role=\"button\">\n                                <i class=\"fas fa-tools\"></i> Tools\n                            </a>\n                            <ul aria-labelledby=\"ToolsDropDown\" class=\"dropdown-menu\">\n                                <li class>\n                                    <a class=\"dropdown-item\" href=\"/tools/base64-encode-decode\">Base64 Encode/Decode</a>\n                                </li>\n                                <li class>\n                                    <a class=\"dropdown-item\" href=\"/tools/url-encode-decode\">Url Encode/Decode</a>\n                                </li>\n                                <li class>\n                                    <a class=\"dropdown-item\" href=\"/tools/gcode-translator\">G-Code Translator</a>\n                                </li>\n                            </ul>\n                        </li>\n                        <li class=\"nav-item\">\n                            <a class=\"nav-link\" href=\"/consumer/login\">Login</a>\n                        </li>\n                    </ul>\n                </div>\n            </div>\n        </nav>\n        <div class=\"container pt-3\">\n            <style type=\"text/css\">.code-text code {color: #bdbdbd;display: block;}.code-text code b {color: #81a2be;font-weight: 900;}.code-text code em {color: #b294bb;font-style: unset;}.code-text code i {color: #b5bd68;}.code-text code span {color: #f0c674;}</style>\n            <div class=\"card text-white border-secondary bg-dark\">\n                <div class=\"card-header\">\n                    <h1 class=\"card-title text-warning\">\n                        <i class=\"fas fa-ghost text-white slide-right\"></i> HTTP: Not Found\n                    </h1>\n                </div>\n                <div class=\"card-body\">\n                    <h3 class=\"leaad code-text\">\n                        <code class=\"mb-3\">\n                            <span>this_page</span>.\n                            <em>not_found</em> = true\n                        </code>\n                    </h3>\n                    <p class=\"lead code-text\">\n                        <code class=\"mb-2\">\n                            <span>if</span>\n                            <b>you_spelt_it_wrong</b>\n                            <br/>&nbsp;&nbsp;\n                            <span>try_again</span>\n                            <br/>\n                        </code>\n                        <code class=\"mb-2\">\n                            <span>elsif \n                                <b>we_screwed_up</b>\n                            </span>\n                            <br/>&nbsp;&nbsp;\n                            <em>print</em>\n                            <i>\"We're really sorry about that.\"</i>\n                            <br/>\n                        </code>\n                        <code class=\"mb-2\">\n                            <span>end</span>\n                        </code>\n                        <code class=\"mb-2\">\n                            <span>redirect_to</span>\n                            <em>home_page</em>\n                        </code>\n                    </p>\n                </div>\n                <div class=\"card-footer\">\n                    <p class=\"text-danger\">We are sorry, something went wrong. Please try again later.</p>\n                </div>\n            </div>\n        </div>\n        <hr class=\"mt-5\" />\n        <div class=\"container\">\n            <div class=\"footer\">\n                <ul class=\"list-inline\">\n                    <li class=\"list-inline-item\">&copy; Go Rest 2024</li>\n                    <li class=\"list-inline-item float-lg-end\">\n                        <a href=\"/privacy-policy\">Privacy Policy</a>\n                    </li>\n                    <li class=\"list-inline-item float-lg-end me-3\">\n                        <a href=\"/contact-us\">Contact Us</a>\n                    </li>\n                </ul>\n            </div>\n        </div>\n    </body>\n</html>"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "comentarios",
+			"item": [
+				{
+					"name": "buscar comentario",
+					"item": [
+						{
+							"name": "buscar comentarios",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body matches string\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"id\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/comments",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"comments"
+									]
+								},
+								"description": "Teste para busca de comentario no recurso de comentarios.\n\nResultados esperados:\n\n\\*response code: 200\n\n\\*string 'id' no corpo do response\n\n\\*tempode resposta <2000ms"
+							},
+							"response": [
+								{
+									"name": "Test case - buscar comentarios",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_base}}/comments",
+											"host": [
+												"{{url_base}}"
+											],
+											"path": [
+												"comments"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Fri, 02 Feb 2024 19:36:16 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "max-age=0, private, must-revalidate"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"5cb5d7789a70a476d1be7aba5626bb54\""
+										},
+										{
+											"key": "referrer-policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-download-options",
+											"value": "noopen"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "x-links-current",
+											"value": "https://gorest.co.in/public/v2/comments?page=1"
+										},
+										{
+											"key": "x-links-next",
+											"value": "https://gorest.co.in/public/v2/comments?page=2"
+										},
+										{
+											"key": "x-links-previous",
+											"value": ""
+										},
+										{
+											"key": "x-pagination-limit",
+											"value": "10"
+										},
+										{
+											"key": "x-pagination-page",
+											"value": "1"
+										},
+										{
+											"key": "x-pagination-pages",
+											"value": "290"
+										},
+										{
+											"key": "x-pagination-total",
+											"value": "2896"
+										},
+										{
+											"key": "x-permitted-cross-domain-policies",
+											"value": "none"
+										},
+										{
+											"key": "x-ratelimit-limit",
+											"value": "90"
+										},
+										{
+											"key": "x-ratelimit-remaining",
+											"value": "89"
+										},
+										{
+											"key": "x-ratelimit-reset",
+											"value": "1"
+										},
+										{
+											"key": "x-request-id",
+											"value": "9b01cf68-c2b1-4580-8f19-3bef493af2d6"
+										},
+										{
+											"key": "x-runtime",
+											"value": "0.109213"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "0"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=hGsu1tLqj3L2QydE5STHc%2FhTf0fA8c4W8%2Bis%2F0nVWXoAaSSNNQCUkuuB1W9G2LxCG6ZbY5mpMdfJB8UZffDnUAghU2JrjJ9hUqJPpgvqE6WNxD0bSG1Na4cTvNNf3t0%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "84f4e1cdaa7401a8-GRU"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"id\": 79130,\n        \"post_id\": 99414,\n        \"name\": \"Chidambar Nehru\",\n        \"email\": \"chidambar_nehru@walter.test\",\n        \"body\": \"Dolorem sed recusandae. Magni eaque quis. Culpa praesentium qui.\"\n    },\n    {\n        \"id\": 79129,\n        \"post_id\": 99413,\n        \"name\": \"Swapnil Butt\",\n        \"email\": \"butt_swapnil@hyatt.test\",\n        \"body\": \"Iure velit iusto. Non eum eaque.\"\n    },\n    {\n        \"id\": 79041,\n        \"post_id\": 99212,\n        \"name\": \"Shashi Khanna\",\n        \"email\": \"shashi_khanna@schamberger-steuber.example\",\n        \"body\": \"Aut et velit. Ut inventore saepe.\"\n    },\n    {\n        \"id\": 79040,\n        \"post_id\": 99212,\n        \"name\": \"Smita Kaur\",\n        \"email\": \"smita_kaur@von.test\",\n        \"body\": \"Nobis recusandae veritatis. Sequi odio dolores.\"\n    },\n    {\n        \"id\": 79028,\n        \"post_id\": 99190,\n        \"name\": \"Gati Acharya\",\n        \"email\": \"acharya_gati@maggio.test\",\n        \"body\": \"Sapiente nisi autem. Aut ut laudantium.\"\n    },\n    {\n        \"id\": 79027,\n        \"post_id\": 99190,\n        \"name\": \"Sanjay Somayaji\",\n        \"email\": \"sanjay_somayaji@pfeffer-jones.example\",\n        \"body\": \"Est minima error. Maxime quasi ab.\"\n    },\n    {\n        \"id\": 79025,\n        \"post_id\": 99186,\n        \"name\": \"Garud Gandhi\",\n        \"email\": \"garud_gandhi@haag.example\",\n        \"body\": \"Laudantium totam quasi. Laborum architecto ea. Repudiandae aliquid ut. Ducimus expedita qui.\"\n    },\n    {\n        \"id\": 79024,\n        \"post_id\": 99186,\n        \"name\": \"Krishna Dhawan II\",\n        \"email\": \"krishna_dhawan_ii@bayer-dicki.test\",\n        \"body\": \"Inventore voluptate non. Veniam omnis magni.\"\n    },\n    {\n        \"id\": 79023,\n        \"post_id\": 99185,\n        \"name\": \"Swami Mehrotra\",\n        \"email\": \"mehrotra_swami@considine.example\",\n        \"body\": \"Sit non laboriosam.\"\n    },\n    {\n        \"id\": 79022,\n        \"post_id\": 99184,\n        \"name\": \"Suman Trivedi\",\n        \"email\": \"trivedi_suman@lindgren-bosco.example\",\n        \"body\": \"Voluptatum commodi non. Illo asperiores qui.\"\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "busca comentario especifico",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body matches string\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"id\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/comments/{{id_comentario_busca}}",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"comments",
+										"{{id_comentario_busca}}"
+									]
+								},
+								"description": "Teste para busca de comentario específico no recurso de comentarios.\n\nResultados esperados:\n\n\\*response code: 200\n\n\\*string 'id' no corpo do response\n\n\\*tempode resposta <2000ms"
+							},
+							"response": [
+								{
+									"name": "Test case - busca comentario especifico",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{url_base}}/comments/{{id_comentario_busca}}",
+											"host": [
+												"{{url_base}}"
+											],
+											"path": [
+												"comments",
+												"{{id_comentario_busca}}"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Fri, 02 Feb 2024 19:37:02 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "32"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache"
+										},
+										{
+											"key": "referrer-policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-download-options",
+											"value": "noopen"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "x-permitted-cross-domain-policies",
+											"value": "none"
+										},
+										{
+											"key": "x-ratelimit-limit",
+											"value": "90"
+										},
+										{
+											"key": "x-ratelimit-remaining",
+											"value": "89"
+										},
+										{
+											"key": "x-ratelimit-reset",
+											"value": "1"
+										},
+										{
+											"key": "x-request-id",
+											"value": "a9ffe54f-b3be-4829-bf0a-74b5310ef5e5"
+										},
+										{
+											"key": "x-runtime",
+											"value": "0.073208"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "0"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=Yj25rq%2F%2FHfkMWT8bSKKhVS28iyk1hMdTOqCcInPi85FspzYlCvwqhWef9d7rgvwhBVkbPb%2FkpOqzYJVjMAmB%2FGebt0xksRkYNCHMxisJNoG7HwSkvJCtHKGCWX6FXAg%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "84f4e2ed9af901a8-GRU"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"Resource not found\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "criar comentario",
+					"item": [
+						{
+							"name": "criar comentario",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body matches string\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"id\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"id\": 79136,\r\n    \"post_id\": 994109,\r\n    \"name\": \"Mohan Tagore\",\r\n    \"email\": \"tagore_mohan@hirthe-ward.example\",\r\n    \"body\": \"Molestiae saepe nihil. Quia qui nisi. Ea temporibus quibusdam. Possimus porro et.\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url_base}}/comments",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"comments"
+									]
+								},
+								"description": "Teste para criar de comentario no recurso de comentarios.\n\nResultados esperados:\n\n\\*response code: 201\n\n\\*string 'id' no corpo do response\n\n\\*tempode resposta <2000ms"
+							},
+							"response": [
+								{
+									"name": "Test case - criar comentario",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\": 79136,\r\n    \"post_id\": 994109,\r\n    \"name\": \"Mohan Tagore\",\r\n    \"email\": \"tagore_mohan@hirthe-ward.example\",\r\n    \"body\": \"Molestiae saepe nihil. Quia qui nisi. Ea temporibus quibusdam. Possimus porro et.\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url_base}}/comments",
+											"host": [
+												"{{url_base}}"
+											],
+											"path": [
+												"comments"
+											]
+										}
+									},
+									"status": "Unprocessable Entity",
+									"code": 422,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Fri, 02 Feb 2024 19:39:44 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "41"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache"
+										},
+										{
+											"key": "referrer-policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-download-options",
+											"value": "noopen"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "x-permitted-cross-domain-policies",
+											"value": "none"
+										},
+										{
+											"key": "x-ratelimit-limit",
+											"value": "90"
+										},
+										{
+											"key": "x-ratelimit-remaining",
+											"value": "89"
+										},
+										{
+											"key": "x-ratelimit-reset",
+											"value": "1"
+										},
+										{
+											"key": "x-request-id",
+											"value": "46a47662-f876-46d2-a9a5-4f814e84437b"
+										},
+										{
+											"key": "x-runtime",
+											"value": "0.079663"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "0"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=a2eumxig2pogkqF%2ByCi91KO7El3J44XvPUhusf7hYKp%2BcVUTCxBaBmEZs%2B8JX9dWrqS2bJE%2Bay%2BRUWHUZmaFn96dWyI58nYY5dKWT7JSx1bS528cLrZJz%2Fw56vdAX%2Bg%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "84f4e6deec5201a8-GRU"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"field\": \"post\",\n        \"message\": \"must exist\"\n    }\n]"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "excluir comentario",
+					"item": [
+						{
+							"name": "excluir comentario",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 204\", function () {\r",
+											"    pm.response.to.have.status(204);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Body matches string\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"id\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url_base}}/comments{{id_comentario_excluir}}",
+									"host": [
+										"{{url_base}}"
+									],
+									"path": [
+										"comments{{id_comentario_excluir}}"
+									]
+								},
+								"description": "Teste para exclusão de comentario no recurso de comentarios.\n\nResultados esperados:\n\n\\*response code: 204\n\n\\*string 'id' no corpo do response\n\n\\*tempode resposta <2000ms"
+							},
+							"response": [
+								{
+									"name": "Test case - excluir comentario",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{url_base}}/comments{{id_comentario_excluir}}",
+											"host": [
+												"{{url_base}}"
+											],
+											"path": [
+												"comments{{id_comentario_excluir}}"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "html",
+									"header": [
+										{
+											"key": "Date",
+											"value": "Fri, 02 Feb 2024 19:40:24 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "text/html; charset=utf-8"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache"
+										},
+										{
+											"key": "feature-policy",
+											"value": "camera 'none'; gyroscope 'none'; microphone 'none'; usb 'none'; fullscreen 'self'"
+										},
+										{
+											"key": "link",
+											"value": "</assets/application-6286ef85f8dd095e49957bfc5b0cba0b68df3592774b35d0494027d130601970.css>; rel=preload; as=style; nopush"
+										},
+										{
+											"key": "referrer-policy",
+											"value": "strict-origin-when-cross-origin"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "x-content-type-options",
+											"value": "nosniff"
+										},
+										{
+											"key": "x-download-options",
+											"value": "noopen"
+										},
+										{
+											"key": "x-frame-options",
+											"value": "SAMEORIGIN"
+										},
+										{
+											"key": "x-permitted-cross-domain-policies",
+											"value": "none"
+										},
+										{
+											"key": "x-request-id",
+											"value": "30fda480-c11f-4f10-8878-a93e2abbf5af"
+										},
+										{
+											"key": "x-runtime",
+											"value": "0.024574"
+										},
+										{
+											"key": "x-xss-protection",
+											"value": "0"
+										},
+										{
+											"key": "CF-Cache-Status",
+											"value": "DYNAMIC"
+										},
+										{
+											"key": "Report-To",
+											"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=ihdrCnG0FLweEkT0bCu9gXYodhFJ%2BAqOxfLLBrn%2B9Fs2%2FoK67gfIwI4fv%2Bdd%2BBaejiV74qAqJZbuT%2FdflgXm5t4X%2B4QqY0LQe4BPS2JNmygvJJpNhX5icPfLIqtxK2w%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "NEL",
+											"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+										},
+										{
+											"key": "Server",
+											"value": "cloudflare"
+										},
+										{
+											"key": "CF-RAY",
+											"value": "84f4e7dcefff01a8-GRU"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "br"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=86400"
+										}
+									],
+									"cookie": [],
+									"body": "<!DOCTYPE html>\n<html>\n    <head>\n        <meta charset=\"utf-8\" />\n        <meta content=\"width=device-width, initial-scale=1, shrink-to-fit=no\" name=\"viewport\" />\n        <link href=\"/favicon.ico\" rel=\"icon\" type=\"image/x-icon\" />\n        <title>Page Not Found | GO REST</title>\n        <link rel=\"stylesheet\" href=\"/assets/application-6286ef85f8dd095e49957bfc5b0cba0b68df3592774b35d0494027d130601970.css\" media=\"all\" data-turbolinks-track=\"reload\" />\n        <script src=\"/packs/js/application-194ed409298f13f197d2.js\" data-turbolinks-track=\"reload\" defer=\"defer\"></script>\n        <script async=\"true\" crossorigin=\"anonymous\" src=\"https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4930099895671899\"></script>\n        <script async=\"true\" src=\"https://www.googletagmanager.com/gtag/js?id=G-7KR6VNWHWS\"></script>\n        <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-7KR6VNWHWS');</script>\n    </head>\n    <body>\n        <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark sticky-top\">\n            <div class=\"container\">\n                <a class=\"navbar-brand\" href=\"/\">\n                    <i class=\"fas fa-exchange-alt\"></i> Go REST\n                </a>\n                <button aria-controls=\"AppNavBar\" aria-expanded=\"false\" aria-label=\"Toggle navigation\" class=\"navbar-toggler\" data-bs-target=\"#AppNavBar\" data-bs-toggle=\"collapse\" type=\"button\">\n                    <span class=\"navbar-toggler-icon\"></span>\n                </button>\n                <div class=\"collapse navbar-collapse\" id=\"AppNavBar\">\n                    <ul class=\"navbar-nav ms-auto\">\n                        <li class=\"nav-item\">\n                            <a class=\"nav-link\" href=\"/chandamama-stories\">\n                                <i class=\"fas fa-cloud-moon\"></i> Chandamama Stories\n                            </a>\n                        </li>\n                        <li class=\"nav-item\">\n                            <a class=\"nav-link\" href=\"/qa\">\n                                <i class=\"fas fa-life-ring\"></i> Help\n                            </a>\n                        </li>\n                        <li class=\"nav-item\">\n                            <a class=\"nav-link\" href=\"/rest-console\">\n                                <i class=\"fab fa-linux\"></i> Rest Console\n                            </a>\n                        </li>\n                        <li class=\"nav-item dropdown\">\n                            <a aria-expanded=\"false\" class=\"nav-link dropdown-toggle\" data-bs-toggle=\"dropdown\" href=\"#\" id=\"ToolsDropDown\" role=\"button\">\n                                <i class=\"fas fa-tools\"></i> Tools\n                            </a>\n                            <ul aria-labelledby=\"ToolsDropDown\" class=\"dropdown-menu\">\n                                <li class>\n                                    <a class=\"dropdown-item\" href=\"/tools/base64-encode-decode\">Base64 Encode/Decode</a>\n                                </li>\n                                <li class>\n                                    <a class=\"dropdown-item\" href=\"/tools/url-encode-decode\">Url Encode/Decode</a>\n                                </li>\n                                <li class>\n                                    <a class=\"dropdown-item\" href=\"/tools/gcode-translator\">G-Code Translator</a>\n                                </li>\n                            </ul>\n                        </li>\n                        <li class=\"nav-item\">\n                            <a class=\"nav-link\" href=\"/consumer/login\">Login</a>\n                        </li>\n                    </ul>\n                </div>\n            </div>\n        </nav>\n        <div class=\"container pt-3\">\n            <style type=\"text/css\">.code-text code {color: #bdbdbd;display: block;}.code-text code b {color: #81a2be;font-weight: 900;}.code-text code em {color: #b294bb;font-style: unset;}.code-text code i {color: #b5bd68;}.code-text code span {color: #f0c674;}</style>\n            <div class=\"card text-white border-secondary bg-dark\">\n                <div class=\"card-header\">\n                    <h1 class=\"card-title text-warning\">\n                        <i class=\"fas fa-ghost text-white slide-right\"></i> HTTP: Not Found\n                    </h1>\n                </div>\n                <div class=\"card-body\">\n                    <h3 class=\"leaad code-text\">\n                        <code class=\"mb-3\">\n                            <span>this_page</span>.\n                            <em>not_found</em> = true\n                        </code>\n                    </h3>\n                    <p class=\"lead code-text\">\n                        <code class=\"mb-2\">\n                            <span>if</span>\n                            <b>you_spelt_it_wrong</b>\n                            <br/>&nbsp;&nbsp;\n                            <span>try_again</span>\n                            <br/>\n                        </code>\n                        <code class=\"mb-2\">\n                            <span>elsif \n                                <b>we_screwed_up</b>\n                            </span>\n                            <br/>&nbsp;&nbsp;\n                            <em>print</em>\n                            <i>\"We're really sorry about that.\"</i>\n                            <br/>\n                        </code>\n                        <code class=\"mb-2\">\n                            <span>end</span>\n                        </code>\n                        <code class=\"mb-2\">\n                            <span>redirect_to</span>\n                            <em>home_page</em>\n                        </code>\n                    </p>\n                </div>\n                <div class=\"card-footer\">\n                    <p class=\"text-danger\">We are sorry, something went wrong. Please try again later.</p>\n                </div>\n            </div>\n        </div>\n        <hr class=\"mt-5\" />\n        <div class=\"container\">\n            <div class=\"footer\">\n                <ul class=\"list-inline\">\n                    <li class=\"list-inline-item\">&copy; Go Rest 2024</li>\n                    <li class=\"list-inline-item float-lg-end\">\n                        <a href=\"/privacy-policy\">Privacy Policy</a>\n                    </li>\n                    <li class=\"list-inline-item float-lg-end me-3\">\n                        <a href=\"/contact-us\">Contact Us</a>\n                    </li>\n                </ul>\n            </div>\n        </div>\n    </body>\n</html>"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "432972d0756460a7159921e214312b3ad8514babb6846bdb859458299d63cceb",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"console.log(pm.info.requestName)"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.test(\"Response time is less than 2seg\", function () {",
+					"    pm.expect(pm.response.responseTime).to.be.below(2000);",
+					"});",
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id_comentario_excluir",
+			"value": "79130",
+			"type": "string"
+		},
+		{
+			"key": "id_comentario_busca",
+			"value": "79127",
+			"type": "string"
+		},
+		{
+			"key": "id_post_excluir",
+			"value": "99189",
+			"type": "string"
+		},
+		{
+			"key": "id_post_busca",
+			"value": "99190",
+			"type": "string"
+		},
+		{
+			"key": "id_delete",
+			"value": "6134835",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "id_update",
+			"value": "6129451",
+			"type": "string"
+		}
+	]
+}
